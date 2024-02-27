@@ -1,0 +1,997 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Lacquer&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0d8e1c9927.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=Lacquer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Freehand&display=swap" rel="stylesheet">  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Freehand&family=MedievalSharp&display=swap" rel="stylesheet">  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Freehand&family=MedievalSharp&family=VT323&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Freehand&family=MedievalSharp&family=VT323&display=swap" rel="stylesheet">
+   <style>
+    @media only screen and (min-width:400px) and (max-width:490px){
+       .desktop{
+        display: none;
+       } 
+       .smallScreen{
+        display: none;
+       }
+       video {
+          display: none;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container{
+            width: 100vw;
+            height: auto;
+            border: 2px solid black;
+         background-color: #fffdfd;
+        }
+        .image-holder {
+            margin: auto;
+            text-align: center;
+            width: 70px;
+            height: 70px;
+            padding-bottom: 5px;
+        }
+        .image-holder img {
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+        }
+        .logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100vw;
+        }
+        .logo-item-fabric {
+            position: relative;
+            padding-top: 10px;
+            width: 100px;
+            height: 100px;
+            /*border: 2px solid #cfcdcc;*/
+            margin-right: 10px;
+            border-radius: 8px;
+        }
+         .logo-item-clothing {
+            position: relative;
+            padding-top: 10px;
+            width: 100px;
+            height: 100px;
+            /*border: 2px solid #cfcdcc;*/
+            margin-right: 10px;
+            border-radius: 8px;
+            padding-right: 6;
+        }
+        
+        .logo-item-graphic-tee{
+            position: relative;
+            padding-top: 10px;
+            width: 100px;
+            height: 100px;
+            /*border: 2px solid #cfcdcc;*/
+            margin-right: 10px;
+            border-radius: 8px;
+        }
+        .logo-item-color{
+            position: relative;
+            padding-top: 10px;
+            width: 100px;
+            height: 100px;
+            /*border: 2px solid #cfcdcc;*/
+            margin-right: 10px;
+            border-radius: 8px;
+        }
+
+        .logo-text {
+            font-family: "Lacquer", system-ui;
+            text-align: center;
+        }
+        i {
+            text-align: center;
+            position: relative;
+            font-size: 25px;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            background-color: #242424;
+            color: white;
+            
+        }
+        .selected {
+            position: absolute;
+            top: -4px;
+            right: 8px;
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+        h4 ,h5{
+            margin-bottom: 5;
+            
+            padding: 0;
+            text-align: center;
+            font-family: "Grandstander", cursive;
+            font-size: 28px;
+        }
+        .preminum{
+
+            padding: 10;
+            position: relative;
+        }
+        .overlay{
+            position: absolute;
+            top: 50%;
+            left: 1;
+           
+            background-color: transparent;
+            width: 100%;
+            height: 50%;
+            opacity: .6;
+        }
+        .unlock i{
+            background-color: transparent;
+            font-size: 30px;
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            color: #595959;
+            
+        }
+        .custom-file-upload {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 5;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload span {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  cursor: pointer;
+  font-family: "Poppins";
+}
+
+.custom-file-upload:hover span {
+  background-color: #ddd;
+}
+.clothing-item-section , .fabric-section , .graphic-design-section{
+   
+
+   margin-top: 5;
+   margin-bottom: 5;
+}
+.color-picker label{
+    font-family: "Poppins";
+    
+}
+.size button{
+    transform: translateY(-5px);
+    text-align: center;
+    font-family:"Poppins";
+    font-size: 19;
+    border: 1px solid #d1d1d1;
+    height: 100%;
+ 
+}
+button i{
+    transform: translateY(6px) ;
+    font-size: 30;
+    background-color: transparent;
+    color: black;
+}
+button p{
+    margin: 0;
+}
+.size{
+    display: flex;
+    margin-top: 5;
+    margin-left: 10;
+
+}
+#txtSize{
+    font-family: 'Poppins';
+font-size: 20;
+
+margin-right: 15;
+}
+.size-section .menu{
+    position: absolute;
+    border: 1px solid black;
+    width: 83;
+    transform: translateY(-5px);
+    display: none;
+}
+.menuItem{
+
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.dropmenu{
+    position: relative;
+}
+.dropmenu:hover .menu{
+
+display: block;
+}
+.measurements{
+    margin-top: 10;
+    padding: 5;
+    display: flex;
+    
+}
+.unit{
+   font-family: "Poppins";
+    width:60;
+    height: 50;
+    border: 1px solid gainsboro;
+    border-radius: 30%;
+    margin-right: 25;
+    margin-bottom: 10;
+}
+.measurements .unit:hover{
+color:rgb(66, 66, 66) ;
+background-color: #e6e6e6;
+}
+.postionItem:hover{
+    color:rgb(66, 66, 66) ;
+background-color: #e6e6e6;
+}
+.unit p{
+    text-align: center;
+}
+.size-section button{
+border-radius: 5px 5px  0px 0px;
+}
+.options{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.postionItem{
+    border: 2px solid black;
+    text-align: center;
+    width: 120;
+ 
+    margin: 9;
+    font-family: "Poppins";
+    border-radius: 9px;
+}
+.sizeRanger{
+    margin-top: 20;
+    margin-left: 20;
+    margin-bottom: 20;
+    text-align: center;
+}
+input[type="range"]{
+    color: black;
+    width: 300;
+}
+
+.displaySize {
+margin-left: 20;
+}
+.displaySize p{
+    font-family: "Poppins";
+    font-size: 25;
+}
+
+.buttons .menu{
+    position: absolute;
+    border: 1px solid black;
+    width: 80;
+    transform: translateY(-5px);
+    display: none;
+}
+.buttons .menuItem{
+
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.buttons .dropmenu{
+    position: relative;
+    margin-right: 20;
+}
+.buttons .dropmenu p{
+    font-family: "Poppins";
+    font-size: 15;
+} 
+button{
+    display: flex;
+    justify-content: center;
+}
+.buttons button{
+    height: 100%;
+    text-align: center;
+    font-family:"Poppins";
+    font-size: 19;
+
+}
+.buttons{
+    display: flex;
+}
+
+.inputField input{
+    width: 280;
+    height: 40;
+    font-family: "Poppins";
+    font-size: 20;
+}
+.UserText{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+   
+}
+.saveText button{
+font-family: "Poppins";
+font-size: 20px;
+text-align: center;
+padding: 10;
+}
+.logos .spinner {
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-top: 5px solid #42a4f5;
+    border-left: 5px solid #e6e6e6;
+    border-right: 5px solid #e6e6e6;
+    border-bottom: 5px solid #e6e6e6;
+    border-radius: 50%;
+    animation-name: Loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+@keyframes Loading {
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
+
+.logos{
+    margin: auto;
+}
+.pre{
+    text-align: center;
+}
+.previewText{
+   position: relative;
+
+}
+.showText{
+ 
+  
+    width: 100vw;
+    height:100px;
+    overflow:auto;
+    word-wrap: break-word;
+ 
+}
+.displaySize p{
+    text-align: center;
+}
+.saveText{
+    padding-bottom: 15;
+    width: 29%;
+    margin: auto;
+    text-align: center;
+}
+    }
+    @media only screen and (min-width:491px) {
+    
+        .container{
+            display: none;
+        }
+        marquee{
+            font-size: 40px;
+            font-family: "Poppins";
+            color: red;
+        }
+        @keyframes Migraine {
+            0%{
+                    background-color: black;
+            }
+            5%{
+                    background-color: orange;
+            }
+             10%{
+                    background-color: blue;
+            }
+            15%{
+                    background-color: chartreuse;
+            }
+            20%{
+                    background-color: gray;
+            }
+            25%{
+                    background-color: greenyellow;
+            }
+            30%{
+                    background-color: gold;
+            }
+            35%{
+                    background-color: green;
+            }
+            40%{
+                    background-color: brown;
+            }
+            45%{
+                    background-color: blueviolet;
+            }
+            50%{
+                    background-color: white;
+            }
+            55%{
+                    background-color: indigo;
+            }
+            60%{
+                    background-color: indianred;
+            }
+            65%{
+                    background-color: forestgreen;
+            }
+            70%{
+                    background-color: firebrick;
+            }
+            75%{
+                    background-color: fuchsia;
+            }
+            80%{
+                    background-color: slateblue;
+            }
+            85%{
+                    background-color: sienna;
+            }
+            90%{
+                    background-color: sandybrown;
+            }
+            95%{
+                    background-color: skyblue;
+            }
+            100%{
+                    background-color: snow;
+            }
+        
+        
+        }
+        body{
+            animation-name: Migraine;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            animation-duration: 1s;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    @media  only screen and (max-width:399px) {
+        .desktop{
+        display: none;
+       }
+       .container{
+        display: none;
+       } 
+       video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+
+    </style>
+</head>
+<body> <div class="smallScreen">
+    <video id="autoplayVideo" autoplay >
+        <source src="./background/y2mate.com - Rick Rolled Short Version_720p.mp4" type="video/mp4">
+    </video>
+</div>
+    <div class="desktop">
+        <marquee>Use A MObile Phone to View This  Site</marquee>
+    </div>
+   
+<div class="container">
+    <div class="clothing-item-section">
+        <h4>Select your Clothing Item</h4>
+        <div class="logos">
+            <div class="logo-item-clothing" data-index="0">
+                <div class="image-holder"><img src="./plain shirt.jpeg" alt=""></div>
+                <div class="logo-text">T Shirt</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-clothing" data-index="1">
+                <div class="image-holder"><img src="./plain jacket.jpeg" alt=""></div>
+                <div class="logo-text">Jacket</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-clothing" data-index="2">
+                <div class="image-holder"><img src="./plain hoodie.jpeg" alt=""></div>
+                <div class="logo-text">Hoodie</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+           
+        </div>
+
+    </div>
+
+    <div class="fabric-section">
+        <h4>Select your fabric</h4>
+        <div class="logos">
+            <div class="logo-item-fabric" data-index="0">
+                <div class="image-holder"><img src="./cotton.jpeg" alt=""></div>
+                <div class="logo-text">Cotton</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-fabric" data-index="1">
+                <div class="image-holder"><img src="./polyster.jpeg" alt=""></div>
+                <div class="logo-text">Polyster</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-fabric" data-index="2">
+                <div class="image-holder"><img src="./rayon.jpeg" alt=""></div>
+                <div class="logo-text">Rayon</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+           
+        </div>
+
+    </div>
+
+    <div class="graphic-design-section">
+        <h4>Graphic Designs</h4>
+        <div class="logos">
+            <div class="logo-item-graphic-tee" data-index="0">
+                <div class="image-holder"><img src="./mr west.png" alt=""></div>
+                <div class="logo-text">YE$$UZ</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-graphic-tee" data-index="1">
+                <div class="image-holder"><img src="./messi.png" alt=""></div>
+                <div class="logo-text">ME$$I</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-graphic-tee" data-index="2">
+                <div class="image-holder"><img src="./baki.png" alt=""></div>
+                <div class="logo-text">BAKI</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-graphic-tee" data-index="3">
+                <div class="image-holder"><img src="./yagami.png" alt=""></div>
+                <div class="logo-text">Cold Yagami</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+        </div>
+<div class="preminum">
+    <h4>Preminum Feartures </h4>
+    <br>
+    <div class="pre">
+        <label for="import" class="custom-file-upload">
+            <span>Import Your Own Design</span>
+            <input type="file" accept="image/*" name="import" id="import">
+          </label>
+    </div>
+   
+
+    <div class="overlay">
+       
+    </div>
+    <div class="unlock">
+        <a href="#"> <i class="fa fa-lock"></i></a>
+    </div>
+    
+</div>
+    </div>
+
+    <div class="graphic-design-section">
+        <h4>Color Designs</h4>
+        <div class="logos">
+            <div class="logo-item-color" data-index="0">
+                <div class="image-holder"><img src="./colors/black.jpeg" alt=""></div>
+                <div class="logo-text">BLACK</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-color" data-index="1">
+                <div class="image-holder"><img src="./colors/white.jpeg" alt=""></div>
+                <div class="logo-text">White</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-color" data-index="2">
+                <div class="image-holder"><img src="./colors/orange.jpeg" alt=""></div>
+                <div class="logo-text">Orange</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-color" data-index="3">
+                <div class="image-holder"><img src="./colors/red.png" alt=""></div>
+                <div class="logo-text">Red</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+
+            <div class="logo-item-color" data-index="3">
+                <div class="image-holder"><img src="./colors/sky red.jpeg" alt=""></div>
+                <div class="logo-text">Sky Red</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+
+            <div class="logo-item-color" data-index="3">
+                <div class="image-holder"><img src="./colors/ic red.jpeg" alt=""></div>
+                <div class="logo-text">I See Red</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+
+            <div class="logo-item-color" data-index="3">
+                <div class="image-holder"><img src="./colors/yellow.jpeg" alt=""></div>
+                <div class="logo-text">Banana Yellow</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+        </div>
+<div class="preminum">
+    <h4>Preminum Feartures </h4>
+    <br>
+    <div class="pre">
+    <label for="import" class="color-picker">
+        <label>Create Your Color</label>
+        <input type="color" >
+      </label>
+</div>
+    <div class="overlay">
+       
+    </div>
+    <div class="unlock">
+        <a href="#"> <i class="fa fa-lock"></i></a>
+    </div>
+    
+</div>
+    </div>
+
+    <div class="size-section">
+        <h4>Select your Size</h4>
+ <div class="size">
+    <label for="" id="txtSize">Size</label>
+    <div class="dropmenu">
+        <button><p id="buttonTxtSize">Type</p> <i class="fa fa-caret-up"></i></button>
+        <div class="menu">
+            <div class="menuItem"><p>UK</p></div>
+            <div class="menuItem"><p>USA</p></div>
+        </div>
+    </div>
+    </div>
+    <div class="measurements">
+        <div class="unit"><p>90</p></div>
+        <div class="unit"><p>100</p></div>
+        <div class="unit"><p>110</p></div>
+        <div class="unit"><p>120</p></div>
+        <div class="unit"><p>130</p></div>
+    </div>
+
+    </div>
+
+    <div class="graphic-design-section">
+        <h4>Logo Selections</h4>
+        <div class="logos">
+            <div class="logo-item-color" data-index="0">
+                <div class="image-holder"><img src="./colors/logo 1.png" alt=""></div>
+                <div class="logo-text">Flare</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-color" data-index="1">
+                <div class="image-holder"><img src="./colors/logo 2.png" alt=""></div>
+                <div class="logo-text">Ape Shit</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-color" data-index="2">
+                <div class="image-holder"><img src="./colors/logo 3.png" alt=""></div>
+                <div class="logo-text">World is Us</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+            <div class="logo-item-color" data-index="3">
+                <div class="image-holder"><img src="./colors/logo4.png" alt=""></div>
+                <div class="logo-text">Slime</div>
+                <div class="selected"><i class="fa fa-check"></i></div>
+            </div>
+
+
+        </div>
+        <div class="logoPosition">
+            <h5>Where do you want to Postion Your Logo </h5>
+            <div class="options">
+                <div class="postionItem"><p>Center</p></div>
+                <div class="postionItem"><p>Right-Center</p></div>
+                <div class="postionItem"><p>Left-Center</p></div>
+                <div class="postionItem"><p>Bottom</p></div>
+                <div class="postionItem"><p>Bottom-Left</p></div>
+                <div class="postionItem"><p>Bottom-Right</p></div>
+                <div class="postionItem"><p>Bottom-Center</p></div>
+                <div class="postionItem"><p>Top</p></div>
+                <div class="postionItem"><p>Top-Center</p></div>
+                <div class="postionItem"><p>Top-Right</p></div>
+                <div class="postionItem"><p>Top-Left</p></div>
+
+            </div>
+        </div>
+        <div class="logoSize">
+            <h5>Select the Size of your Logo</h5>
+            <div class="sizeRanger">
+                <input type="range"  value="30" name="LogoSize" id="logosize" min="30" max="150">
+            </div>
+            <div class="displaySize">
+                <p class="fontSIze">30 px</p>
+            </div>
+        </div>
+<div class="preminum">
+    <h4>Preminum Feartures </h4>
+    <br>
+    <div class="pre">
+    <label for="import" class="custom-file-upload">
+        <span>Import Your Own Logo</span>
+        <input type="file" accept="image/*" name="import" id="import">
+      </label>
+</div>
+    <div class="overlay">
+       
+    </div>
+    <div class="unlock">
+        <a href="#"> <i class="fa fa-lock"></i></a>
+    </div>
+    
+</div>
+    </div>
+    <div class="fabric-section">
+        <h4>Add Text</h4>
+        <div class="TextSelection">
+           <div class="UserText">
+            <div class="inputField"><input type="text" id="txtST"></div>
+            <div class="buttons">
+                <div class="dropmenu">
+                    <button><p id="buttonTxtSize"></p>Font <i class="fa fa-caret-up"></i></button>
+                    <div class="menu">
+                        <div class="menuItem"><p  id="fontstyle" >cursive</p></div>
+                        <div class="menuItem" ><p  id="fontstyle" >FreeHand</p></div>
+                        <div class="menuItem"><p  id="fontstyle" >Medieval</p></div>
+                        <div class="menuItem"><p  id="fontstyle" >Retro</p></div>
+                        <div class="menuItem"><p  id="fontstyle" >Freckle Face</p></div>
+                       
+                        
+                    </div>
+                </div>
+            </div>
+
+           </div>
+           <div class="TextSize">
+            <h5>Select the Letter-Sizing Of Text</h5>
+            <div class="sizeRanger">
+                <input type="range"  value="1" name="LogoSize" id="Textsize" min="1" max="30">
+            </div>
+            <div class="displaySize">
+                <p class="fontSIzetxt">1 px</p>
+            </div>
+        </div>
+           <div class="previewText">
+            <h5>Preview Of Text</h5>
+            <div class="showText">
+                <h4 id="txtprev"></h4>
+            </div>
+            
+           </div>
+           <div class="logoPosition">
+            <h5>Where do you want to Postion Your Text</h5>
+            <div class="options">
+                <div class="postionItem"><p>Center</p></div>
+                <div class="postionItem"><p>Right-Center</p></div>
+                <div class="postionItem"><p>Left-Center</p></div>
+                <div class="postionItem"><p>Bottom</p></div>
+                <div class="postionItem"><p>Bottom-Left</p></div>
+                <div class="postionItem"><p>Bottom-Right</p></div>
+                <div class="postionItem"><p>Bottom-Center</p></div>
+                <div class="postionItem"><p>Top</p></div>
+                <div class="postionItem"><p>Top-Center</p></div>
+                <div class="postionItem"><p>Top-Right</p></div>
+                <div class="postionItem"><p>Top-Left</p></div>
+
+            </div>
+        </div>
+           <div class="saveText">
+            <button>Save Font</button>
+           </div>
+           
+        </div>
+
+    </div>
+    <div class="clothing-item-section">
+        <h4>Preview Design </h4>
+        <div class="logos">
+         
+           <div class="spinner">
+
+           </div>
+        </div>
+
+    </div>
+
+</div>
+    
+   
+    
+
+    <script>
+
+//Preview Text
+
+//add font style in a text preview
+let fontstyle ="Poppins"
+let fontSize = "1px"
+const options = document.querySelectorAll("#fontstyle")
+
+options.forEach(font =>{
+    font.addEventListener("click",()=>{
+        if(font.innerHTML==="cursive"){
+            fontstyle ="cursive";
+            const text =  document.getElementById("txtST")
+    const displayPrev = document.getElementById("txtprev")
+    let message = text.value
+    displayPrev.style.fontFamily=fontstyle;
+    displayPrev.style.letterSpacing = fontSize;
+    displayPrev.innerHTML=message
+        }
+        else if(font.innerHTML==="FreeHand"){
+        fontstyle = "'Freehand', cursive";
+        const text =  document.getElementById("txtST")
+    const displayPrev = document.getElementById("txtprev")
+    let message = text.value
+    displayPrev.style.fontFamily=fontstyle;
+    displayPrev.style.letterSpacing = fontSize;
+    displayPrev.innerHTML=message
+        }
+
+        else if(font.innerHTML==="Medieval"){
+        fontstyle = " 'MedievalSharp', cursive"
+        const text =  document.getElementById("txtST")
+        const displayPrev = document.getElementById("txtprev")
+    let message = text.value
+    displayPrev.style.fontFamily=fontstyle;
+    displayPrev.style.letterSpacing = fontSize;
+    displayPrev.innerHTML=message
+        }
+
+        else if(font.innerHTML==="Retro"){
+        fontstyle = "'VT323', monospace"
+        const text =  document.getElementById("txtST")
+        const displayPrev = document.getElementById("txtprev")
+    let message = text.value
+    displayPrev.style.fontFamily=fontstyle;
+    displayPrev.style.letterSpacing = fontSize;
+    displayPrev.innerHTML=message
+       
+        
+        }
+
+        else if(font.innerHTML==="Freckle Face"){
+        fontstyle = " 'Freckle Face', system-ui"
+        const text =  document.getElementById("txtST")
+        const displayPrev = document.getElementById("txtprev")
+    let message = text.value
+    displayPrev.style.fontFamily=fontstyle;
+    displayPrev.style.letterSpacing = fontSize;
+    displayPrev.innerHTML=message
+        }
+
+
+        console.log(fontstyle)
+    })
+})
+
+// Assign FontSIze 
+const fontRange = document.getElementById("Textsize").addEventListener("input",(e)=>{
+            console.log("change haappped")
+         fontSize = `${e.target.value}px`;
+         document.querySelector(".fontSizetxt").innerHTML = e.target.value+" px"
+        const text =  document.getElementById("txtST")
+    const displayPrev = document.getElementById("txtprev")
+    let message = text.value
+    displayPrev.style.fontFamily=fontstyle;
+    displayPrev.style.letterSpacing = fontSize;
+    displayPrev.innerHTML=message
+
+         
+        })
+
+const text = document.getElementById("txtST").addEventListener("input",(e)=>{
+    const displayPrev = document.getElementById("txtprev")
+    let message = e.target.value
+    displayPrev.style.fontFamily=fontstyle;
+    displayPrev.style.letterSpacing = fontSize;
+    displayPrev.innerHTML=message
+})
+        //display value of range div
+     const range = document.getElementById("logosize").addEventListener("input",(e)=>{
+            console.log("change haappped")
+            console.log(e.target.value)
+            document.querySelector(".fontSize").innerHTML = e.target.value+" px"
+        })
+
+
+        //selection for graphic tees
+        const items = document.querySelectorAll(".logo-item-graphic-tee");
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                items.forEach(otherItem => {
+                    otherItem.querySelector('.selected').classList.remove('show');
+                });
+
+                item.querySelector('.selected').classList.toggle('show');
+            });
+        });
+
+        //selection for fabrics
+        const itemsFabric = document.querySelectorAll(".logo-item-fabric");
+        itemsFabric.forEach(item => {
+            item.addEventListener('click', () => {
+                itemsFabric.forEach(otherItem => {
+                    otherItem.querySelector('.selected').classList.remove('show');
+                });
+
+                item.querySelector('.selected').classList.add('show');
+            });
+        });
+
+        
+        //selection for Clothing item
+        const itemsClothing = document.querySelectorAll(".logo-item-clothing");
+        itemsClothing.forEach(item => {
+            item.addEventListener('click', () => {
+                itemsClothing.forEach(otherItem => {
+                    otherItem.querySelector('.selected').classList.remove('show');
+                });
+
+                item.querySelector('.selected').classList.add('show');
+            });
+        });
+        
+            //selection for Color item
+            const itemsColor = document.querySelectorAll(".logo-item-color");
+            itemsColor.forEach(item => {
+            item.addEventListener('click', () => {
+                itemsColor.forEach(otherItem => {
+                    otherItem.querySelector('.selected').classList.remove('show');
+                });
+
+                item.querySelector('.selected').classList.add('show');
+            });
+        });
+    </script>
+</body>
+</html>
